@@ -5,374 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mustapha Yahaya | Digital Craft Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* --- MODERN PURE CSS STYLING --- */
-        :root {
-            --bg-main: #0b0f19;
-            --bg-card: rgba(17, 24, 39, 0.7);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-primary: #f3f4f6;
-            --text-secondary: #9ca3af;
-            --accent-glow: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
-            --accent-blue: #3b82f6;
-            --accent-green: #10b981;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- BACKGROUND GRADIENT ORBS --- */
-        .bg-glow-1 {
-            position: fixed;
-            top: -10%;
-            left: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-        .bg-glow-2 {
-            position: fixed;
-            bottom: -10%;
-            right: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-b: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo {
-            font-family: monospace;
-            font-size: 1.4rem;
-            font-weight: bold;
-            background: var(--accent-glow);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            gap: 24px;
-        }
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 80px 20px 60px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        /* Profile Image Styling */
-        .profile-wrapper {
-            position: relative;
-            width: 130px;
-            height: 130px;
-            margin-bottom: 24px;
-        }
-        .profile-frame {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            padding: 4px;
-            background: var(--accent-glow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #1f2937;
-            object-fit: cover;
-            border: 3px solid var(--bg-main);
-        }
-        .status-dot {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 16px;
-            height: 16px;
-            background-color: var(--accent-green);
-            border: 3px solid var(--bg-main);
-            border-radius: 50%;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin: 0 0 12px 0;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        .hero h2 {
-            font-size: 1.6rem;
-            color: var(--text-secondary);
-            margin: 0 0 24px 0;
-            font-weight: 500;
-        }
-        .hero p {
-            max-width: 640px;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin: 0 0 32px 0;
-        }
-        .btn-group {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .btn {
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-        .btn-primary {
-            background: var(--accent-blue);
-            color: white;
-            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
-        }
-        .btn-primary:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: var(--text-primary);
-        }
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* --- CONTAINER SECTION --- */
-        .section-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .section-title::after {
-            content: "";
-            height: 1px;
-            flex-grow: 1;
-            background: var(--border-color);
-        }
-
-        /* --- BENTO CARD GRID --- */
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-        @media (max-width: 768px) {
-            .grid-layout {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 { font-size: 2.2rem; }
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 28px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card:hover {
-            border-color: rgba(255, 255, 255, 0.18);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .card-icon {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        .card h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-        .card p {
-            color: var(--text-secondary);
-            margin: 0 0 20px 0;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .tag {
-            font-family: monospace;
-            font-size: 0.75rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 4px 10px;
-            border-radius: 6px;
-            color: #cbd5e1;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* --- EXP / SKILLS GRID SPLIT --- */
-        .split-layout {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-        }
-        @media (max-width: 768px) {
-            .split-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-        .timeline {
-            border-left: 2px solid var(--border-color);
-            padding-left: 20px;
-            position: relative;
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 28px;
-        }
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -27px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-            border: 2px solid var(--bg-main);
-        }
-        .timeline-item h4 {
-            margin: 0 0 4px 0;
-            font-size: 1.05rem;
-        }
-        .timeline-meta {
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: var(--accent-blue);
-            margin-bottom: 8px;
-        }
-        .timeline-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin: 0;
-        }
-
-        .skills-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-        .skills-box h4 {
-            margin: 0 0 12px 0;
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: #cbd5e1;
-        }
-
-        /* --- FLOATING WHATSAPP BUTTON --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
-            z-index: 200;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(10deg);
-            background-color: #20ba5a;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.3);
-            border-top: 1px solid var(--border-color);
-            margin-top: 60px;
-        }
-    </style>
+    <link rel="stylesheet" href="utilities/style.css">
+    <link rel="shortcut icon" href="utilities/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -383,12 +17,19 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- RESPONSIVE HEADER -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">&lt;MY.CRAFT /&gt;</a>
+            
+            <!-- Hidden Checkbox trick handles mobile toggle click actions purely via CSS -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button"><i class="fa-solid fa-bars"></i></label>
+            
             <div class="nav-links">
-                <a href="#projects">Projects</a>
-                <a href="#experience">Journey</a>
+                <!-- Clicking these on mobile collapses menu or moves cleanly to sections -->
+                <a href="#projects" onclick="document.getElementById('menu-toggle').checked = false;">Projects</a>
+                <a href="#experience" onclick="document.getElementById('menu-toggle').checked = false;">Journey</a>
                 <a href="https://wa.me/2348023583408" target="_blank">Contact</a>
             </div>
         </div>
@@ -397,12 +38,12 @@
     <section class="hero">
         <div class="profile-wrapper">
             <div class="profile-frame">
-                <img src="image/Image.jpeg" alt="Mustapha Yahaya" class="profile-img">
+                <img src="utilities/Image.jpeg" alt="Mustapha Yahaya" class="profile-img">
             </div>
             <div class="status-dot" title="Available for Crafting"></div>
         </div>
         <h1>Mustapha Yahaya</h1>
-        <h2>Computer Science Undergraduate & Software Craftsman</h2>
+        <h2>Computer Science Undergraduate | Software Craftsman | AI Enthusiast </h2>
         <p>Designing backend technical architectures, processing dynamic datasets, and constructing sleek, functional applications out of Gombe, Nigeria.</p>
         <div class="btn-group">
             <a href="#projects" class="btn btn-primary">Explore My Projects</a>
@@ -471,17 +112,17 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <h4>Federal University of Kashere</h4>
-                        <div class="timeline-meta">B.Sc. Computer Science (2023 — 2027)</div>
+                        <div class="timeline-meta">B.Sc. Computer Science (2025 — 2026)</div>
                         <p class="timeline-desc"><strong>Vice President, NACOS:</strong> Guiding code workshops, managing technical peer review cohorts, and accelerating programming foundations locally.</p>
                     </div>
                     <div class="timeline-item">
                         <h4>3MTT Program Fellowship</h4>
-                        <div class="timeline-meta">Software Certificate (Graduate Flight)</div>
+                        <div class="timeline-meta">Software Certificate (2024)</div>
                         <p class="timeline-desc">Intensive architecture training resulting in a <strong>5th place achievement</strong> during the 3MTT Gombe State Hackathon 2.0 sprint.</p>
                     </div>
                     <div class="timeline-item">
                         <h4>Operations Lead / Master Artisan</h4>
-                        <div class="timeline-meta">Apparel Manufacturing (2016 — Present)</div>
+                        <div class="timeline-meta">Apparel Manufacturing (2015 — Present)</div>
                         <p class="timeline-desc">Directing end-to-end multi-tier production logic, providing the exact operational insight behind the MyAtelier automation framework.</p>
                     </div>
                 </div>
@@ -498,7 +139,7 @@
                 <div class="skills-box">
                     <h4>// STACK APPARATUS</h4>
                     <div class="tag-list">
-                        <span class="tag">Flask</span><span class="tag">SQLAlchemy</span><span class="tag">PWA Engine</span><span class="tag">Linux</span><span class="tag">Git</span>
+                        <span class="tag">Flask</span><span class="tag">SQLAlchemy</span><span class="tag">PWA Engine</span><span class="tag">Linux</span><span class="tag">Git</span><span class="tag">Github</span>
                     </div>
                 </div>
                 <div class="skills-box">
@@ -508,6 +149,32 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+    </section>
+
+        <!-- DEDICATED SEPARATE CONTACT SECTION -->
+    <section id="connect" class="section-container">
+        <div class="section-title">Secure a Connection</div>
+        <div class="contact-grid">
+            
+            <a href="mailto:yahayamustaphaa@gmail.com" class="contact-card email">
+                <i class="fa-solid fa-envelope" style="color: var(--accent-blue);"></i>
+                <h4>Email Messaging</h4>
+                <p>yahayamustaphaa@gmail.com</p>
+            </a>
+
+            <a href="https://github.com/MustaphaYahaya" target="_blank" class="contact-card github">
+                <i class="fa-brands fa-github" style="color: var(--accent-purple);"></i>
+                <h4>GitHub Node</h4>
+                <p>github.com/MustaphaYahaya</p>
+            </a>
+
+            <a href="https://wa.me/2348023583408" target="_blank" class="contact-card whatsapp">
+                <i class="fa-brands fa-whatsapp" style="color: var(--accent-green);"></i>
+                <h4>WhatsApp Secure</h4>
+                <p>+234 802 358 3408</p>
+            </a>
 
         </div>
     </section>
