@@ -1,6 +1,6 @@
 # 🚀 Mustapha Yahaya | Personal Portfolio
 
-![Portfolio Preview](https://mustaphayahaya.github.io/assets/portfolio-preview.png)
+![Portfolio Preview](https://mustaphayahaya.github.io/utilities/preview.png)
 
 [![Live Site](https://img.shields.io/badge/Live_Site-Visit_Portfolio-blue?style=for-the-badge&logo=googlechrome)]([https://mustaphayahaya.github.io](https://mustaphayahaya.github.io/my-portfolio/))
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
